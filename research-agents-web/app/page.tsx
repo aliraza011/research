@@ -139,9 +139,14 @@ export default function Home() {
           </div>
         </div>
 
-        <button className="startButton" onClick={startResearch} disabled={loading || selected.length < 2 || !title.trim() || !hypothesis.trim()}>
-          {loading ? "Planning research..." : "Generate experiment plan"}
-        </button>
+        <button
+  type="button"
+  className="startButton"
+  onClick={startResearch}
+  disabled={loading || selected.length < 2 || !title.trim() || !hypothesis.trim()}
+>
+  {loading ? "Planning research..." : "Generate experiment plan"}
+</button>
         {error && <p className="error">{error}</p>}
       </section>
 
