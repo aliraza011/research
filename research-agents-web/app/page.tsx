@@ -45,10 +45,8 @@ export default function Home() {
     setSelected((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
   }
 
-  async function startResearch() {
-    setLoading(true);
-    setError("");
-    setResult(null);
+  async function startResearch(event?: React.MouseEvent<HTMLButtonElement>) {
+  event?.preventDefault();
 
     try {
       const res = await fetch("/api/research", {
